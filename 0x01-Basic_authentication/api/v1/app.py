@@ -15,7 +15,7 @@ app.register_blueprint(app_views)
 CORS(app, resources={r"/api/v1/*": {"origins": "*"}})
 auth = None
 
-if os.environ['AUTH_TYPE']:
+if os.environ.get('AUTH_TYPE'):
     from api.v1.auth.auth import Auth
     auth = Auth()
 
