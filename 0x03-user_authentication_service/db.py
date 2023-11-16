@@ -56,10 +56,10 @@ class DB:
         try:
             result = self._session.query(User).filter_by(**kwargs).one()
             return result
-        except NoResultFound as NRF:
-            raise NoResultFound
-        except InvalidRequestError as IRE:
-            raise InvalidRequestError
+        except NoResultFound:
+            raise NoResultFound()
+        except InvalidRequestError:
+            raise InvalidRequestError()
 
     def update_user(self, user_id: int, **kwargs: Dict[str, str]) -> None:
         """
