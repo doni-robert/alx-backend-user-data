@@ -55,7 +55,7 @@ def login() -> Dict[str, str]:
 
 
 @app.route('/sessions', methods=['DELETE'], strict_slashes=False)
-def logout() -> Dict[str, str]:
+def logout() -> str:
     """
     Logs out a user
     """
