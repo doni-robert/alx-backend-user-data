@@ -11,7 +11,7 @@ AUTH = Auth()
 
 @app.route('/', methods=['GET'])
 def hello_world():
-    return jsonify()
+    return jsonify({"message": "Bienvenue"})
 
 
 @app.route('/users', methods=['POST'])
