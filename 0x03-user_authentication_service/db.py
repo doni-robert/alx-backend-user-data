@@ -47,7 +47,7 @@ class DB:
 
         return new_user
 
-    def find_user_by(self, **kwargs: Dict[str, str]) -> User:
+    def find_user_by(self, **kwargs) -> User:
         """
         Returns the first row found in the `users` table as filtered by
         the input arguments
@@ -61,7 +61,7 @@ class DB:
             raise InvalidRequestError()
         return result
 
-    def update_user(self, user_id: int, **kwargs: Dict[str, str]) -> None:
+    def update_user(self, user_id: int, **kwargs) -> None:
         """
         Updates a User object
         """
