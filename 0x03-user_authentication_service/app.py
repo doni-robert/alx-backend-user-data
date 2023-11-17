@@ -60,12 +60,10 @@ def logout() -> Dict[str, str]:
     Logs out a user
     """
     session_id = request.cookie.get('session_id')
-    if session_id is None:
-        abort(403)
     user = Auth.get_user_from_id(session_id)
     if user:
         Auth.destroy_session(user.id)
-        return redirect(url_for('/'))
+        return redirect('/')
     abort(403)
 
 
